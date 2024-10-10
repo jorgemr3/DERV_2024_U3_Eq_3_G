@@ -13,7 +13,7 @@ public class ClaseSingleton : MonoBehaviour
             //instance diferente de null
             //this diferente de instance 
             //ololllll
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {

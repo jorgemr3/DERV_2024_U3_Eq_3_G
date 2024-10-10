@@ -14,7 +14,7 @@ public class ManagerUI : MonoBehaviour
         {
             //instance diferente de null
             //this diferente de instance 
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {

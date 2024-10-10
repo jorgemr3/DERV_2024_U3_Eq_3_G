@@ -7,18 +7,29 @@ public class P5_fuerzas : MonoBehaviour
     Rigidbody rb;
     [SerializeField] float velocidad;
 
+    float tmp_en_pantalla;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
-        rb.AddForce(transform.right * velocidad * 15f, ForceMode.VelocityChange);
+        tmp_en_pantalla=0;
+        //rb.AddForce(transform.right * velocidad * 15f, ForceMode.VelocityChange); // ignoran la masa
         //rb.AddForce(transform.right*velocidad* 15f, ForceMode.Acceleration); 
     }
 
+
+    private void Update(){
+          tmp_en_pantalla += Time.deltaTime;
+          if(tmp_en_pantalla > 1.5f){
+            tmp_en_pantalla=0;
+            gameObject.SetActive(false);
+          }
+    }
     void FixedUpdate()
     {
-        rb.AddForce(transform.right * velocidad * 15f, ForceMode.Impulse);
-
+        rb.AddForce( velocidad * Time.fixedDeltaTime* transform.forward , ForceMode.Impulse); //escalar * escalar * matriz
     }
+
+    // se multiplica en la actualidad con fixeddeltatime?
 }
