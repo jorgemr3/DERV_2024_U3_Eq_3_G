@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Exp_Singleton/Escena_Singleton 2.unity
     guid: 2580cc344a68adb46b79fa3fad863051
+  - enabled: 1
+    path: Assets/Scenes/Exp_UI_adv/Escena 1 - Inicio.unity
+    guid: 2aec5da375818714abed119433044bc2
+  - enabled: 1
+    path: Assets/Scenes/Exp_UI_adv/Escena 2 - dinamica V.unity
+    guid: d6c28bd5e9ccd63419bd9c6e3ec13a64
+  - enabled: 1
+    path: Assets/Scenes/Exp_UI_adv/Escena 3 - Fin.unity
+    guid: 4f188a892cadca64bab2578feff2a005
   m_configObjects: {}
