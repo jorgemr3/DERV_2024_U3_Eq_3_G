@@ -7,7 +7,7 @@ public class PlacaTrigger : MonoBehaviour
     GameObject placa; // La placa que pedirá un color
     List<string> colores = new List<string> { "Verde", "Amarillo", "Cafe" };
     string colorPedido;
-    Renderer placaRenderer;
+    Renderer placaRenderer; //material de la placa
 
     [SerializeField] Material verde;
     [SerializeField] Material amarillo;
@@ -15,6 +15,7 @@ public class PlacaTrigger : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("PlacaTrigger Awake");
         placa = GameObject.Find("Placa");
         placaRenderer = placa.GetComponent<Renderer>();
         colorPedido = colores[Random.Range(0, colores.Count)];
@@ -34,7 +35,7 @@ public class PlacaTrigger : MonoBehaviour
             Renderer cuboRenderer = other.GetComponentInChildren<Renderer>();
             if (cuboRenderer != null)
             {
-                string colorCubo = DeterminarColor(cuboRenderer.material);
+                string colorCubo = DeterminarColor(cuboRenderer.material.color);
                 Debug.Log("Color del cubo: " + colorCubo);
 
                 if (colorCubo == colorPedido)
@@ -66,13 +67,13 @@ public class PlacaTrigger : MonoBehaviour
         }
     }
 
-    string DeterminarColor(Material material)
+    string DeterminarColor(Color color)
     {
-        if (material == verde)
+        if (color == verde.color)
             return "Verde";
-        else if (material == amarillo)
+        else if (color == amarillo.color)
             return "Amarillo";
-        else if (material == cafe)
+        else if (color == cafe.color)
             return "Cafe";
         else
             return "Color incorrecto";
@@ -80,7 +81,7 @@ public class PlacaTrigger : MonoBehaviour
 
     void Start()
     {
-
+        Debug.Log("PlacaTrigger sTART");
     }
 
     // Update is called once per frame
